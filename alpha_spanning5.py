@@ -68,8 +68,41 @@ def connected(list, vertices):
             comps.append(cc)
     return number_comp == 1, comps
 
+    # the actual algoirithm below
 
-# the actual algoirithm below
+
+import matplotlib.pyplot
+from matplotlib.pyplot import *
+import numpy
+from numpy import arange
+
+
+def performILP():
+    figure()
+    x = arange(-100, 200, 10)
+    y = arange(-100, 200, 10)
+    y1 = 150.0 - x
+    y2 = 25.0 - 0.625 * x
+    y3 = 35 - 2.5 * x
+
+    xlim(-100, 200)
+    ylim(-100, 200)
+    hlines(0, -100, 200, color='k')
+    vlines(0, -100, 200, color='k')
+    grid(True)
+
+    xlabel('x-axis')
+    ylabel('y-axis')
+
+    plot(x, y1, color='b')
+    plot(x, y2, color='r')
+    plot(x, y3, color='m')
+
+    title('Obj')
+    # legend
+    x = [0.0, 40.0, 150.0, 0.0]
+    y = [25.0, 0.0, 0.0, 150.0]
+    fill(x, y, 'r')
 
 
 # method for alpha spanning network computation
